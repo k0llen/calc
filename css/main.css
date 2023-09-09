@@ -1,0 +1,299 @@
+/* Reset styles start */
+html {
+  box-sizing: border-box;
+  cursor: default;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #1b64fa;
+}
+
+::selection {
+  color: #fff;
+  background: #1b64fa;
+}
+
+html,
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+figure {
+  margin: 0 auto;
+}
+
+blockquote {
+  margin: 0;
+}
+
+sup,
+sub {
+  line-height: 1em;
+  font-size: 0.75em;
+}
+
+a {
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  transition-property: background-size;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button,
+[role=button],
+[type=button],
+[type=reset],
+[type=submit] {
+  cursor: url(img/cursor-rect.svg) 25 25, auto;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  text-transform: inherit;
+  color: inherit;
+  text-align: left;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  margin: 0;
+}
+button[disabled],
+[role=button][disabled],
+[type=button][disabled],
+[type=reset][disabled],
+[type=submit][disabled] {
+  cursor: initial;
+}
+
+/*input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="search"],*/
+select,
+textarea {
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  margin: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+select::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+}
+select:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  opacity: 1;
+}
+select::placeholder,
+textarea::placeholder {
+  opacity: 1;
+}
+
+input[type=text]::-ms-clear, input[type=text]::-ms-reveal, input[type=email]::-ms-clear, input[type=email]::-ms-reveal, input[type=password]::-ms-clear, input[type=password]::-ms-reveal, input[type=tel]::-ms-clear, input[type=tel]::-ms-reveal, input[type=search]::-ms-clear, input[type=search]::-ms-reveal {
+  display: none;
+}
+input[type=text]::-webkit-search-decoration, input[type=text]::-webkit-search-cancel-button, input[type=text]::-webkit-search-results-button, input[type=text]::-webkit-search-results-decoration, input[type=email]::-webkit-search-decoration, input[type=email]::-webkit-search-cancel-button, input[type=email]::-webkit-search-results-button, input[type=email]::-webkit-search-results-decoration, input[type=password]::-webkit-search-decoration, input[type=password]::-webkit-search-cancel-button, input[type=password]::-webkit-search-results-button, input[type=password]::-webkit-search-results-decoration, input[type=tel]::-webkit-search-decoration, input[type=tel]::-webkit-search-cancel-button, input[type=tel]::-webkit-search-results-button, input[type=tel]::-webkit-search-results-decoration, input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-results-button, input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
+input[type=number] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+select {
+  cursor: pointer;
+}
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+select::-ms-expand {
+  display: none;
+}
+
+textarea {
+  resize: none;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+svg,
+use {
+  transform: translateZ(0);
+  display: block;
+}
+
+svg {
+  max-width: 100%;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  margin: 0;
+  width: 100px;
+  background-color: fade(#000, 18%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+/* Reset styles end */
+.wrapper {
+  margin: 0 auto;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.body {
+  color: #FFF;
+}
+
+.calculator-body {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 25% 75%;
+  align-items: flex-end;
+  background: #262626;
+  padding: 36px 18px;
+}
+.calculator-display {
+  width: 100%;
+  padding: 8px 18px;
+  border-radius: 16px;
+  background: #0E0E0E;
+  font-size: 96px;
+  line-height: 100%;
+  text-align: right;
+  margin-bottom: 36px;
+}
+.calculator-buttons {
+  display: flex;
+  gap: 16px;
+  height: 100%;
+}
+.calculator-buttons .calculator-more-buttons,
+.calculator-buttons .calculator-main-buttons {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.calculator-buttons .calculator-main-buttons {
+  width: 40%;
+}
+.calculator-buttons .calculator-more-buttons {
+  width: 60%;
+}
+.calculator-buttons .row {
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+.calculator-buttons .row + .row {
+  margin-top: 18px;
+}
+.calculator-buttons .btn {
+  flex-basis: 25%;
+  border-radius: 16px;
+  border: 1px solid #000;
+  background: #0E0E0E;
+  box-shadow: 0px 4px 0px 0px #000;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 42px;
+  height: 100%;
+  transition: 0.2s all;
+  cursor: pointer;
+}
+.calculator-buttons .btn:active {
+  box-shadow: 0px 1px 0px 0px #000;
+  transform: translateY(3px);
+  background: #272727;
+  border-color: #272727;
+}
+.calculator-buttons .btn + .btn {
+  margin-left: 16px;
+}
+.calculator-buttons .orange {
+  color: #FF8A00;
+  font-size: 56px;
+  line-height: 64px;
+}
+.calculator-buttons .gray {
+  color: #7f7f7f;
+}
+.calculator-buttons .col2 {
+  flex-basis: 54%;
+  border: 1px solid #E77D00;
+  background: #FF8A00;
+  box-shadow: 0px 4px 0px 0px #E77D00;
+  color: #FFF;
+  font-size: 56px;
+  line-height: 64px;
+}
+.calculator-buttons .col2:active {
+  box-shadow: 0px 1px 0px 0px #E77D00;
+  background: #f4af5e;
+  border-color: #f4af5e;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;500&display=swap"
+        rel="stylesheet">
+    <title>Calculator</title>
+</head>
+
+<body class="body">
+    <main>
+        <div class="wrapper">
+            <div class="calculator-body">
+                <div class="calculator-display">
+                    <div class="calculator-display-current">0</div>
+                </div>
+                <div class="calculator-buttons">
+                    <div class="calculator-more-buttons">
+                        <div class="row">
+                            <button class="btn" data-value="(">(</button>
+                            <button class="btn" data-value=")">)</button>
+                            <button class="btn" data-value="mc">mc</button>
+                            <button class="btn" data-value="m+">m+</button>
+                            <button class="btn" data-value="m-">m-</button>
+                            <button class="btn" data-value="mr">mr</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn" data-value="2nd">2<sup>nd</sup></button>
+                            <button class="btn" data-value="x2">x<sup>2</sup></button>
+                            <button class="btn" data-value="x3">x<sup>3</sup></button>
+                            <button class="btn" data-value="xy">x<sup>y</sup></button>
+                            <button class="btn" data-value="ex">e<sup>x</sup></button>
+                            <button class="btn" data-value="10x">10<sup>x</sup></button>
+                        </div>
+                        <div class="row">
+                            <button class="btn" data-value="1/x"><sup>1</sup>/x</button>
+                            <button class="btn" data-value="2√x"><sup>2</sup>√x</button>
+                            <button class="btn" data-value="3√x"><sup>3</sup>√x</button>
+                            <button class="btn" data-value="y√x"><sup>y</sup>√x</button>
+                            <button class="btn" data-value="ln">ln</button>
+                            <button class="btn" data-value="log10">log₁₀</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn" data-value="x!">x!</button>
+                            <button class="btn" data-value="sin">sin</button>
+                            <button class="btn" data-value="cos">cos</button>
+                            <button class="btn" data-value="tan">tan</button>
+                            <button class="btn" data-value="e">e</button>
+                            <button class="btn" data-value="ee">EE</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn" data-value="rad">Rad</button>
+                            <button class="btn" data-value="sinh">sinh</button>
+                            <button class="btn" data-value="cosh">cosh</button>
+                            <button class="btn" data-value="tanh">tanh</button>
+                            <button class="btn" data-value="pi">π</button>
+                            <button class="btn" data-value="rand">Rand</button>
+                        </div>
+                    </div>
+                    <div class="calculator-main-buttons">
+                        <div class="row">
+                            <button class="btn gray" data-value="ac">AC</button>
+                            <button class="btn gray" data-value="+-">+/-</button>
+                            <button class="btn gray" data-value="%">%</button>
+                            <button class="btn orange" data-value="/">÷</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn" data-value="7">7</button>
+                            <button class="btn" data-value="8">8</button>
+                            <button class="btn" data-value="9">9</button>
+                            <button class="btn orange" data-value="*">×</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn" data-value="4">4</button>
+                            <button class="btn" data-value="5">5</button>
+                            <button class="btn" data-value="6">6</button>
+                            <button class="btn orange" data-value="-">-</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn" data-value="1">1</button>
+                            <button class="btn" data-value="2">2</button>
+                            <button class="btn" data-value="3">3</button>
+                            <button class="btn orange" data-value="+">+</button>
+                        </div>
+                        <div class="row">
+                            <button class="btn" data-value="0">0</button>
+                            <button class="btn" data-value=",">,</button>
+                            <button class="btn orange col2" data-value="=">=</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
