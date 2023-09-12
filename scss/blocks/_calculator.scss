@@ -114,3 +114,16 @@
         }
     }
 }
+
+@media screen and (max-width: 990px) {
+    .calculator {
+        &-buttons {
+            .calculator-more-buttons {
+                display: none;
+            }
+            .calculator-main-buttons{
+                width: 100%;
+            }
+        }
+    }
+}

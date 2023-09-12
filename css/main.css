@@ -296,4 +296,13 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0px 1px 0px 0px #E77D00;
   background: #f4af5e;
   border-color: #f4af5e;
+}
+
+@media screen and (max-width: 990px) {
+  .calculator-buttons .calculator-more-buttons {
+    display: none;
+  }
+  .calculator-buttons .calculator-main-buttons {
+    width: 100%;
+  }
 }/*# sourceMappingURL=main.css.map */
