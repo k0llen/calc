@@ -292,7 +292,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 56px;
   line-height: 64px;
 }
-.calculator-buttons .col2:active {
+.calculator-buttons .col2:active, .calculator-buttons .col2:focus {
   box-shadow: 0px 1px 0px 0px #E77D00;
   background: #f4af5e;
   border-color: #f4af5e;

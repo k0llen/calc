@@ -1,7 +1,4 @@
-let firstNumber = '0',
-    secondNumber = '',
-    operator = '',
-    finish = false;
+let firstNumber = '0', secondNumber = '', operator = '', finish = false;
 
 const buttons = document.querySelector('.calculator-buttons');
 const screenText = document.querySelector('.calculator-display-current');
@@ -21,43 +18,8 @@ function clearAll() {
 buttons.addEventListener('click', (event) => {
     if (event.target.classList.contains('btn')) {
         const key = event.target.dataset.value;
-        if (acButton.contains(event.target)) {
-            clearAll();
-        }
-        if (numbers.includes(key)) {
-            if (secondNumber === '' && operator === '') {
-                if (firstNumber === '0') {
-                    firstNumber = key;
-                    screenText.innerHTML = Intl.NumberFormat().format(firstNumber);
-                } else {
-                    firstNumber += key;
-                    screenText.innerHTML = Intl.NumberFormat().format(firstNumber);
-                }
-            } else if (firstNumber !== '' && secondNumber !== '' && finish) {
-                secondNumber = key;
-                finish = false;
-                screenText.innerHTML = Intl.NumberFormat().format(secondNumber);
-            } else {
-                secondNumber += key;
-                screenText.innerHTML = Intl.NumberFormat().format(secondNumber);
-            }
-            console.log(firstNumber, operator, secondNumber);
-        }
-        if (operators.includes(key)) {
-            if (operator === '') {
-                operator = key;
-                console.log(firstNumber, operator, secondNumber);
-            } else if (operator !== '') {
-                operator = key;
-                secondNumber = firstNumber;
-                console.log(firstNumber, operator, secondNumber);
-            } 
-        }
-        if (key === '=') {
-            funResult();
-        }
-
-        function funResult() {
+        const firstNumberBuff = firstNumber;
+        const funResult = () => {
             if(secondNumber === '') secondNumber = firstNumber;
             switch (operator) {
                 case '+':
@@ -76,14 +38,88 @@ buttons.addEventListener('click', (event) => {
                         firstNumber = (+firstNumber) / (+secondNumber);
                     }
                     break;
+                case 'xy':
+                    for (let i = 1; i < secondNumber; i++) firstNumber *= firstNumberBuff;
+                    break;
             }
             screenText.innerHTML = Intl.NumberFormat().format(firstNumber);
             finish = true;
+        };
+        if (acButton.contains(event.target)) {
+            clearAll();
+        }
+        if (numbers.includes(key)) {
+            if (secondNumber === '' && operator === '') {
+                if (firstNumber === '0' && key !== '.') {
+                    firstNumber = key;
+                    screenText.innerHTML = Intl.NumberFormat().format(firstNumber);
+                } else if (key === '.'){
+                    firstNumber += key;
+                    screenText.innerHTML = firstNumber;
+                }else {
+                    firstNumber += key;
+                    screenText.innerHTML = Intl.NumberFormat().format(firstNumber);
+                }
+            } else if (firstNumber !== '' && secondNumber !== '' && finish) {
+                secondNumber = key;
+                finish = false;
+                screenText.innerHTML = Intl.NumberFormat().format(secondNumber);
+            } else {
+                secondNumber += key;
+                screenText.innerHTML = Intl.NumberFormat().format(secondNumber);
+            }
+        }
+        if (operators.includes(key)) {
+            if (operator === '') {
+                operator = key;
+            } else if (operator !== '') {
+                if(key === '%') {
+                    secondNumber = firstNumber / 100 * secondNumber;
+                } else {
+                    operator = key;
+                    secondNumber = firstNumber;
+                }
+                
+            }
+        }
+
+        switch(key) {
+            case '=': 
+                funResult();
+                break;
+            case 'x2':            
+                firstNumber = firstNumber * firstNumber;
+                screenText.innerHTML = Intl.NumberFormat().format(firstNumber);
+                finish = true;
+                break;
+            case 'x3': 
+                firstNumber = firstNumber * firstNumber * firstNumber;
+                screenText.innerHTML = Intl.NumberFormat().format(firstNumber);
+                finish = true;
+                break;
+            case '10x':
+                if (firstNumber < 161) {
+                    if (firstNumber === '0' ?? firstNumber === '') {
+                        firstNumber = 1;
+                        screenText.innerHTML = '1';
+                    } else {
+                        firstNumber = 10;
+                        for (let i = 1; i < firstNumberBuff; i++) firstNumber *= 10;
+                        screenText.innerHTML = Intl.NumberFormat().format(firstNumber);
+                    }
+                    finish = true;
+                } else {
+                    screenText.innerHTML = 'Ошибка';
+                }
+                break;
+            case '1/x':
+                firstNumber = 1 / firstNumber;
+                screenText.innerHTML = Intl.NumberFormat().format(firstNumber);
+                break;
         }
     }
-    console.log(firstNumber, operator, secondNumber, finish)
-})
-
+    console.log(firstNumber, operator, secondNumber, finish);
+});
 
 const clearBtn = document.querySelector('.clear-btn');
 clearBtn.addEventListener('click',()=> console.clear());
